@@ -1,128 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title> Tareas por hacer</title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title> Tareas por hacer</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-
-
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
 
 
-<body>
-    
-    
- 
-  <ul id="slide-out" class="side-nav">
-    <li><a href="#!">First Sidebar Link</a></li>
-    <li><a href="#!">Second Sidebar Link</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse">
-      <i class="mdi-navigation-menu"></i>
-  </a>
 
 
-    <div  class="navbar-fixed">
-   <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="html/agregar tarea.html"><i class="material-icons left">add</i>Agregar tarea</a></li>
-        
-        <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
-      
-      </ul>
-    </div>
-  </nav>
+    <body>
+
+
+
+        <ul id="slide-out" class="side-nav">
+            <li><a href="#!">Tareas de hoy</a></li>
+            <li><a href="#!">Tareas archivadas</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse">
+            <i class="mdi-navigation-menu"></i>
+        </a>
+
+
+        <div  class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                   <ul class="left hide-on-med-and-down">
+                       <li>
+                        <button class="boton-transparente" id="boton_menu" type="button" >
+                            <i class="material-icons left">list</i>
+                        </button>
+                         </li>
+                         <li>
+                            <button class="boton-transparente"  type="button" onclick="cargarTareas()" >
+                                <i class="material-icons left">store</i> Lista de tareas
+                            </button>
+                         </li>
+                      </ul>         
+                    <ul class="right hide-on-med-and-down">
+                        <!--li><a href="html/agregar_tarea.html"><i class="material-icons left">add</i>Agregar tarea</a></li!-->
+                      <li>
+                        <button class="boton-transparente" id="agregar_tarea" type="button" onclick="crearTarea()">
+                         <i class="material-icons left">add</i>
+                         Agreagar tarea
+                    </button> 
+                      </li>
+                        <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
+
+                    </ul>
+                </div>
+            </nav>
         </div>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-     
-      
-      
-     <!-->seccion de la lista<!-->
-     <ul class="collection">
-    <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-    </li>
-  </ul>
-    
-     
-      <br><br>
 
-    </div>
-  </div>
-<!-->seccion de la lista<!-->
-
-
-    
+        <div id="cuerpo_principal" onload="cargarTareas()"> </div>
+           
+                
+          
+        <!--!>
+        pie de pagina
+        <--->
+        <footer class="page-footer " >
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text"></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by <a class="orange-text text-lighten-3">Sebastian Larrieu y Agustin Koll  </a>
+                </div>
+            </div>
+        </footer>
 
 
 
 
-
-
-<!--!>
-pie de pagina
-<--->
-<footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-        </div>
-     </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
-
-
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/sidenav.js"></script>
-
-  </body>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/sidenav.js"></script>
+        <script src="js/ajax.js"></script>
+    </body>
 </html>
