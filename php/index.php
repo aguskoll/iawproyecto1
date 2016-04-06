@@ -4,10 +4,12 @@
     <body>
 
         <?php
+
         function redirect($url) {
-    header("Location: $url");
-    die();
-}
+            header("Location: $url");
+            die();
+        }
+
         include_once('db.php');
         $bd = new Model();
         if (!isset($_GET['listaID'])) {
@@ -22,21 +24,20 @@
                 redirect("./");
             }
         }
-        
+
         $notas = $bd->getNotas($lista);
-        if ( (count($notas) > 0)){
+        if ((count($notas) > 0)) {
             echo "<table border=1>";
             echo "<tr><td>Nota</td><td>Fecha</td><td>Orden</td></tr>";
         }
-            foreach ($notas as $nota) {
-                echo "<tr>";
-                echo "<td>" . $nota['nota'] . "</td>";
-                echo "<td>" . $nota['fecha'] . "</td>";
-                echo "<td>" . $nota['orden'] . "</td>";
-                echo "</tr>";
-            }
-                echo "</table>";
-        
+        foreach ($notas as $nota) {
+            echo "<tr>";
+            echo "<td>" . $nota['nota'] . "</td>";
+            echo "<td>" . $nota['fecha'] . "</td>";
+            echo "<td>" . $nota['orden'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
         ?>
 
     </body>
