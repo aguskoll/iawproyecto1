@@ -33,7 +33,7 @@ class Model {
     
     #Agrega una nueva nota
     public function addNota($nota, $fecha, $orden,$hecha, $url){
-        if(!$dbConnected){
+        if(!$this->dbConnected){
             $this->connect();
         }
         $query = "INSERT INTO todo (nota, fecha, orden, hecha, url) VALUES('$nota', '$fecha', $orden, $hecha, '$url')";
@@ -42,7 +42,7 @@ class Model {
     
     //Retorna las notas correspondients a la url dada
     public function getNotas($url){
-        if(!$dbConnected){
+        if(!$this->dbConnected){
             $this->connect();
         }
         return $this->db->query("SELECT nota, fecha, orden FROM todo WHERE url = '$url' ORDER BY orden ASC")->fetchAll();
