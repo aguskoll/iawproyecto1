@@ -29,11 +29,11 @@
         $notas = $bd->getNotas($lista);
         if ((count($notas) > 0)) {
             echo "<table border=1>";
-            echo "<tr><td>Nota</td><td>Fecha</td><td>Orden</td></tr>";
+            echo "<tr><th>Nota</th><th>Fecha</th><th>Orden</th></tr>";
         }
         $ultima=0;
         foreach ($notas as $nota) {
-            echo "<tr>";
+            echo "<tr id= " . $nota['Id'] . ">";
             echo "<td>" . $nota['nota'] . "</td>";
             echo "<td>" . $nota['fecha'] . "</td>";
             echo "<td>" . $nota['orden'] . "</td>";
