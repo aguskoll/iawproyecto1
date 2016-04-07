@@ -12,15 +12,16 @@
 
         include_once('db.php');
         $bd = new Model();
+        
         if (!isset($_GET['listaID'])) {
             $lista = uniqid();
-            //generar un identificador unico para la nueva lista
+            $bd->addListaID($lista);
             echo "<br> crear una nueva id"; //Esto es debug
         } else {
             $lista = filter_input(INPUT_GET, 'listaID', FILTER_SANITIZE_STRING);
-            $notas = $bd->getNotas($lista);
-            if ($notas == false || (count($notas) == 0)) {//asumo lista vacia como error, PREGUNTAR
-                echo "<br> la url es invalida, no existe esa lista"; //esto es debug
+            
+            if (!$bd->isValid($lista)) {
+                //puedo llevar a una un mensaje de error
                 redirect("./");
             }
         }
@@ -37,12 +38,13 @@
             echo "<td>" . $nota['fecha'] . "</td>";
             echo "<td>" . $nota['orden'] . "</td>";
             echo "</tr>";
-            $ultima= $nota['orden'];
+            $ultima= $nota['orden']+1;
         }
         echo "</table>";
-        $link= "href=./formularioAgregar.php?listaID=" . $lista . "&orden=" . $ultima; 
-        echo "<a ".$link."> agregar nota</a>";
+        echo "<br><a href=./formularioAgregar.php?listaID=$lista&orden=$ultima> agregar nota</a>";
+        echo "<br> Link para compartir esta lista: /index.php?listaID=$lista";
         ?>
     </body>
 
 </html>
+

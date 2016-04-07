@@ -18,6 +18,10 @@ class Model {
 
             $query = "CREATE TABLE IF NOT EXISTS todo (Id INTEGER PRIMARY KEY, nota TEXT, fecha TEXT, orden INTEGER, hecha INTEGER, url TEXT)";
             $this->db->exec($query);
+            
+            #tabla para ids validas
+            $query = "CREATE TABLE IF NOT EXISTS listas (listaID TEXT PRIMARY KEY)";
+            $this->db->exec($query);
         } catch (PDOException $e) {
             die('Database error: ' . $e->getMessage());
         }
@@ -35,7 +39,6 @@ class Model {
     }
 
     #Agrega una nueva nota
-
     public function addNota($nota, $fecha, $orden, $hecha, $url) {
         if (!$this->dbConnected) {
             $this->connect();
@@ -44,12 +47,30 @@ class Model {
         $this->db->exec($query);
     }
 
-    //Retorna las notas correspondients a la url dada
-    public function getNotas($url) {
+    #Agrega un nuevo identificador de lista
+    public function addListaID($listaID) {
         if (!$this->dbConnected) {
             $this->connect();
         }
-        return $this->db->query("SELECT nota, fecha, orden FROM todo WHERE url = '$url' ORDER BY orden ASC")->fetchAll();
+        $query = "INSERT INTO listas VALUES ('$listaID')";
+        $this->db->exec($query);
+    }
+    
+    #Retorna true si la lista esta presente en la bd
+    public function isValid($listaID) {
+        if (!$this->dbConnected) {
+            $this->connect();
+        }
+        $tmp = $this->db->query("SELECT * FROM listas WHERE listaID = '$listaID'")->fetchAll();
+        return count($tmp) > 0;
+    }
+    
+    #Retorna las notas correspondients a la lista dada
+    public function getNotas($listaID) {
+        if (!$this->dbConnected) {
+            $this->connect();
+        }
+        return $this->db->query("SELECT Id, nota, fecha, orden FROM todo WHERE url = '$listaID' ORDER BY orden ASC")->fetchAll();
     }
 
 }
