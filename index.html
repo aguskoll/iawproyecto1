@@ -14,9 +14,6 @@
 
 
 
-
-
-
     <body>
 
 
@@ -35,27 +32,34 @@
                 <div class="nav-wrapper">
                    <ul class="left hide-on-med-and-down">
                        <li>
-                        <button class="boton-transparente" id="boton_menu" type="button" >
+                           <!--el boton para expandir el menu!-->
+                           <a class="boton-transparente" onclick="boton_menu()">
                             <i class="material-icons left">list</i>
-                        </button>
+                        </a>
                          </li>
                          <li>
-                            <button class="boton-transparente"  type="button" onclick="cargarTareas()" >
+                             <!--el boton para cargar la lista de tareas!-->
+                            <a class="boton-transparente"   onclick="cargarTareas()" >
                                 <i class="material-icons left">store</i> Lista de tareas
-                            </button>
+                            </a>
                          </li>
                       </ul>         
                     <ul class="right hide-on-med-and-down">
-                        <!--li><a href="html/agregar_tarea.html"><i class="material-icons left">add</i>Agregar tarea</a></li!-->
+                        <!--boton para agreagar tarea!-->
                       <li>
-                        <button class="boton-transparente" id="agregar_tarea" type="button" onclick="crearTarea()">
-                         <i class="material-icons left">add</i>
-                         Agreagar tarea
-                    </button> 
+                        <a class="boton-transparente" id="agregar_tarea"  onclick="crearTarea()">
+                            <i class="material-icons left">add</i>
+                            Agreagar tarea
+                         </a> 
                       </li>
                         <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
-
+                        
                     </ul>
+                     <ul>  
+                        <li>
+                           <!--futura barra  !--> 
+                        </li> 
+                     </ul>
                 </div>
             </nav>
         </div>
@@ -67,7 +71,7 @@
         <!--!>
         pie de pagina
         <--->
-        <footer class="page-footer " >
+        <footer class="page-footer "  >
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
@@ -91,5 +95,6 @@
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
     </body>
 </html>

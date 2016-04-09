@@ -16,7 +16,13 @@
   // Hide sideNav
   $('.button-collapse').sideNav('hide');
 
-$("#boton_menu").click(function(){
-     $('.button-collapse').sideNav('show');
+//$("#boton_menu").click(function(){
+  //   $('.button-collapse').sideNav('show');
 
-});
+//});
+
+function boton_menu(){
+    
+     $('.button-collapse').sideNav('show');
+    
+}
