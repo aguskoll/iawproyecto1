@@ -20,29 +20,24 @@ function procesarRequest () {
         }
       }
     }
-function cargarTareas(){
+
+function cargarTareas(lista){
 	
 	
-	//realizarPeticion("html/tareas.html","GET",procesarRequest);
-            var url="http://localhost:8383/starter-template/php/index.php";
+            window.alert(lista);
+            var url="php/mostrarNotas.php?listaID="+lista;
             realizarPeticion(url,"GET",procesarRequest);
 }
-
-function crearTarea(){
+function crearTarea(lista){
 	
 	
 	//realizarPeticion("html/agregar_tarea.html","GET",procesarRequest);
-        var url="php/formularioAgregar.php";
+        var url="php/formularioAgregar.php?listaID="+lista;
         realizarPeticion(url,"GET",procesarRequest);
 }
  
-  window.document.getElementById("cuerpo_principal").innerHTML=cargarTareas();
+ // window.document.getElementById("cuerpo_principal").innerHTML=cargarTareas();
   
   
   //funcionn que use para probar lo del load, reemplzar las llamadas 
   //de cargarTareas()
- function pruebaCarga(){
-     
-     $("#cuerpo_principal").load("http://localhost:8383/starter-template/php/index.php");
-     
- }

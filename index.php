@@ -11,14 +11,27 @@
         <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
+  <?php
+   if (!isset($_GET['listaID'])) {
+               
+                         //$url ='nueva';
+                          include_once('php/db.php');
+                           $bd = new Model();   
+                          $url =  uniqid();
+                             $bd->addListaID($url);
+                    }
+                    else{
+                        //agregar chequeo
+                         $url =$_GET['listaID'];
+                    }
+               ?>  
 
 
+    <body onload="cargarTareas('<?php echo $url; ?>')">
+ 
 
-    <body>
 
-
-
-        <ul id="slide-out" class="side-nav">
+        <ul id="slide-out" class="side-nav" onclick="boton_menu()">
             <li><a href="#!">Tareas de hoy</a></li>
             <li><a href="#!">Tareas archivadas</a></li>
         </ul>
@@ -39,7 +52,8 @@
                          </li>
                          <li>
                              <!--el boton para cargar la lista de tareas!-->
-                            <a class="boton-transparente"   onclick="cargarTareas()" >
+                             
+                             <a class="boton-transparente"  onclick="cargarTareas('<?php echo $url; ?>')">
                                 <i class="material-icons left">store</i> Lista de tareas
                             </a>
                          </li>
@@ -47,7 +61,7 @@
                     <ul class="right hide-on-med-and-down">
                         <!--boton para agreagar tarea!-->
                       <li>
-                        <a class="boton-transparente" id="agregar_tarea"  onclick="crearTarea()">
+                        <a class="boton-transparente" id="agregar_tarea"  onclick="crearTarea('<?php echo $url; ?>')">
                             <i class="material-icons left">add</i>
                             Agreagar tarea
                          </a> 
@@ -63,12 +77,23 @@
                 </div>
             </nav>
         </div>
-
-        <div id="cuerpo_principal" onload="cargarTareas()"> </div>
+       
+          
+         <div id="cuerpo_principal" >
+            
+         </div>
+          
+             
+        
            
                 
           
         <!--!>
+        onload="cargarTareas('<?php echo $url; ?>')"  <script type="javascript" src="js/ajax.js" >
+                    cargarTareas('<?php echo $url; ?>');    
+             </script>
+         
+        <div id="cuerpo_principal" onload="cargarTareas(<?php echo $url; ?>)"> </div>
         pie de pagina
         <--->
         <footer class="page-footer "  >
@@ -95,6 +120,6 @@
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
-        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+       
     </body>
 </html>
