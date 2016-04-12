@@ -43,16 +43,15 @@
         $notas = $bd->getNotas($lista);
         if ((count($notas) > 0)) {
             echo "<table border=1>";
-            echo "<tr><th>Nota</th><th>Fecha</th><th>Orden</th></tr>";
+            echo "<tr><th>Nota</th><th>Link</th><th>Fecha</th></tr>";
         }
-        $ultima = 0;
+        
         foreach ($notas as $nota) {
             echo "<tr id= " . $nota['Id'] . ">";
             echo "<td>" . $nota['nota'] . "</td>";
+            echo "<td>" . $nota['link'] . "</td>";
             echo "<td>" . $nota['fecha'] . "</td>";
-            echo "<td>" . $nota['orden'] . "</td>";
             echo "</tr>";
-            $ultima = $nota['orden'] + 1;
         }
         echo "</table>";
         echo "<br> Link para compartir esta lista: /index.php?listaID=$lista";

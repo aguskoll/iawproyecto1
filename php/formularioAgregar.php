@@ -13,7 +13,6 @@
     <div class="row">	
         <?php
         $listaID = filter_input(INPUT_GET, 'listaID', FILTER_SANITIZE_STRING);
-       // $orden = filter_input(INPUT_GET, 'orden', FILTER_SANITIZE_STRING);
         ?>
         <form action="php/guardarNota.php" method="post" class="col s12">
 
@@ -43,11 +42,9 @@
 
                 </div>
             </div>
-            <input type="hidden" name="orden" value="<?php echo htmlspecialchars(2); ?>"/>
             <input type="hidden" name="listaID" value="<?php echo htmlspecialchars($listaID); ?>"/>
-            <input type="hidden" name="nueva" value="si"/>
            
-            <input class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <input class="btn waves-effect waves-light" type="submit" name="action">
             <i class="material-icons right">send</i>
         
 
