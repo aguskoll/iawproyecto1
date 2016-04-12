@@ -5,16 +5,13 @@ function redirect($url) {
 }
 include_once('db.php');
 
-if (isset($_POST['nueva'])) {
     $db = new Model();
     $nota = $_POST['nota'];
+    $link = $_POST['link'];
     $fecha = $_POST['fecha'];
-    $orden = $_POST['orden'];
     $identificador = $_POST['listaID'];
-    $db->addNota($nota, $fecha, $orden, 0, $identificador);
+    $orden = ($db->contar($identificador))+1;
+    $db->addNota($nota, $link, $fecha, $orden, $identificador);
 
-
-  
-}
  redirect("../index.php?listaID=$identificador");
         ?>
