@@ -24,7 +24,7 @@ function procesarRequest () {
 function cargarTareas(lista){
 	
 	
-            window.alert(lista);
+           
             var url="php/mostrarNotas.php?listaID="+lista;
             realizarPeticion(url,"GET",procesarRequest);
 }

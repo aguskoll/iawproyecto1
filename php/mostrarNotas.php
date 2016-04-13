@@ -27,7 +27,7 @@
         if ($_GET['listaID']==='nueva') {
             $lista = uniqid();
             $bd->addListaID($lista);
-            echo $lista; //Esto es debug
+           
         } 
         else 
             {
@@ -35,28 +35,49 @@
 
             if (!$bd->isValid($lista)) {
                 
-            //    redirect("index.php");
+       
                
             }
           }
 
         $notas = $bd->getNotas($lista);
-        if ((count($notas) > 0)) {
-            echo "<table border=1>";
-            echo "<tr><th>Nota</th><th>Link</th><th>Fecha</th></tr>";
-        }
-        
-        foreach ($notas as $nota) {
-            echo "<tr id= " . $nota['Id'] . ">";
-            echo "<td>" . $nota['nota'] . "</td>";
-            echo "<td>" . $nota['link'] . "</td>";
-            echo "<td>" . $nota['fecha'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        echo "<br> Link para compartir esta lista: /index.php?listaID=$lista";
+       
+		?>
+        <?php
+		$ultima = 0;
+    
         ?>
+<ul class="collection">
+<?php foreach ($notas as $nota) {?>
+<ul class="collection">
+                        <li class="collection-item avatar" id="<?php echo $nota['Id']; ?>">
+                            <i class="material-icons circle">comment</i>
+                            <span class="title">Tarea: <?php echo $nota['nota'] ?> </span>
+                            <p><?php echo 'Fecha de finalizacion: '.$nota['fecha'].' Prioridad: '.$ultima ?></p>
+							 <p><?php echo 'Link: '.$nota['link']?></p>
+                            <div class="secondary-content">
+                                   <a onclick="borrarNota('<?php echo $nota['Id']; ?>')"  class="waves-effect waves-light btn">
+                                    <i class="material-icons">delete</i>
+                                    </a>
+                                <a onclick=""  class="waves-effect waves-light btn">
+                                    <i class="material-icons" >mode_edit </i>
+                                    </a>
+                                <!--a onclick=""  class="waves-effect waves-light btn">
+                                    <i class="material-icons" >mode_edit </i>
+                                    </a--!>
+                            <!--i class="material-icons">grade</i!-->
+                            </div>
+                            </li>
+                                <?php 
+					 $ultima ++;
+				} 
+                                ?>
+				                            
+                        
+                  
 
-    </div>
+		 <br> Link para compartir esta lista: </br> <?php echo "/index.php?listaID=$lista"; ?>
+</ul>   
+   </div>
 </div>
 

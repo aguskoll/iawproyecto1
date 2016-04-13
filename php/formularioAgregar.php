@@ -45,7 +45,7 @@
             <input type="hidden" name="listaID" value="<?php echo htmlspecialchars($listaID); ?>"/>
            
             <input class="btn waves-effect waves-light" type="submit" name="action">
-            <i class="material-icons right">send</i>
+            <i class="material-icons ">send</i>
         
 
         </form>
