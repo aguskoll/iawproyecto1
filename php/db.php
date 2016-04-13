@@ -8,10 +8,10 @@ class Model {
     private $dbConnected = false;
 
     #Creo el objeto bd y la tabla si no existe
-    public function __construct() {
+    public function __construct($path) {
         try {
             //Creo conexion a bd y las tablas
-            $this->connect();
+            $this->connect($path);
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
             $query = "CREATE TABLE IF NOT EXISTS todo (Id INTEGER PRIMARY KEY, nota TEXT, link TEXT, fecha DATE, orden INTEGER, hecha INTEGER, url TEXT)";
@@ -26,9 +26,13 @@ class Model {
     }
 
     #Genera la conexion a la bd
-    private function connect() {
+    private function connect($path) {
         try {
-            $this->db = new PDO('sqlite:materiasDB.sqlite');
+            if($path === "index"){
+            $this->db = new PDO('sqlite:php/materiasDB.sqlite');
+            }else{
+                $this->db = new PDO('sqlite:materiasDB.sqlite');
+            }
             $this->dbConnected = true;
         } catch (PDOException $e) {
             die('Connection failed: ' . $e->getMessage());

@@ -4,7 +4,7 @@ function redirect($url) {
     header("Location: $url");
     die();
 }
-    $bd = new Model();  
+    $bd = new Model('index');  
     
    if (!isset($_GET['listaID'])) {
     $url =  uniqid();

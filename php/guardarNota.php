@@ -5,7 +5,7 @@ function redirect($url) {
 }
 include_once('db.php');
 
-    $db = new Model();
+    $db = new Model('otro');
     $nota = $_POST['nota'];
     $link = $_POST['link'];
     $fecha = $_POST['fecha'];
