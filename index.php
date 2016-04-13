@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    
+    
 </head>
 <?php
     include_once('php/checkID.php'); 
@@ -20,7 +22,7 @@
     <body onload="cargarTareas('<?php echo $url; ?>')">
 
 
-
+           <!--aca estaba lo del menu!--> 
         <ul id="slide-out" class="side-nav" onclick="boton_menu()">
             <li><a href="#!">Tareas de hoy</a></li>
             <li><a href="#!">Tareas archivadas</a></li>
@@ -30,9 +32,10 @@
         </a>
 
 
-        <div class="navbar-fixed">
+        <div class="navbar-fixed ">
             <nav>
-                <div class="nav-wrapper">
+                <div class="nav-wrapper blue lighten-2">
+                    
                     <ul class="left hide-on-med-and-down">
                         <li>
                             <!--el boton para expandir el menu!-->
@@ -47,7 +50,11 @@
                                 <i class="material-icons left">store</i> Lista de tareas
                             </a>
                         </li>
+                        <li
+                          <a id="logo-container "  class="brand-logo center">Organiza tu estudio</a>
+                        <li/>
                     </ul>
+                   
                     <ul class="right hide-on-med-and-down">
                         <!--boton para agreagar tarea!-->
                         <li>
@@ -68,7 +75,7 @@
         </div>
 
 
-        <div id="cuerpo_principal">
+           <div id="cuerpo_principal" class="cuerpo">
 
         </div>
 
@@ -85,7 +92,7 @@
         <div id="cuerpo_principal" onload="cargarTareas(<?php echo $url; ?>)"> </div>
         pie de pagina
         <--->
-        <footer class="page-footer ">
+        <footer class="page-footer fixed blue lighten-2  ">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">

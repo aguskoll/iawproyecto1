@@ -38,10 +38,10 @@
                         <p><?php echo 'Fecha de finalizacion: ' . $nota['fecha'] . ' Prioridad: ' . $ultima ?></p>
                         <p><?php echo 'Link: ' . $nota['link'] ?></p>
                         <div class="secondary-content">
-                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')"  class="waves-effect waves-light btn">
+                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')"  class="waves-effect waves-circle blue lighten-2  btn-floating">
                                 <i class="material-icons">delete</i>
                             </a>
-                            <a onclick=""  class="waves-effect waves-light btn">
+                            <a onclick=""  class="waves-effect  waves-circle blue lighten-2  btn-floating">
                                 <i class="material-icons" >mode_edit </i>
                             </a>
                             <!--a onclick=""  class="waves-effect waves-light btn">
