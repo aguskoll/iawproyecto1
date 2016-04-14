@@ -8,7 +8,7 @@ $notaID = '';
 
 if (isset($_GET['notaID'])) {
     $notaID = $_GET['notaID'];
-    $bd = new Model();
+    $bd = new Model('php');
     $resultado = $bd->deleteNota($notaID);
 
 }

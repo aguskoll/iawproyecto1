@@ -24,7 +24,8 @@ function borrarNota(url) {
 
 function actualizarNotas(responseXML) {
     if ($("eliminado", responseXML).text() === "1") {
-        $("#"+($("notaID", responseXML).text())).remove();
+        var elem = document.getElementById(($("notaID", responseXML).text()));
+        elem.parentNode.removeChild(elem);
     } else {
         window.alert("Error: no se pudo eliminar a " + notaID);
     }
