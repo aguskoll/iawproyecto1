@@ -1,12 +1,15 @@
-/*
+
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
 });
-*/
+
+var notaID;
 
 function borrarNota(url) {
+   notaID=url;
+    window.alert(" eliminar a " + url);
     $.ajax({
-        url: 'borrarNota.php',
+        url: 'php/borrarNota.php',
         data: {
             notaID: url
         },

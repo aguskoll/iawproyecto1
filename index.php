@@ -92,7 +92,7 @@
         <div id="cuerpo_principal" onload="cargarTareas(<?php echo $url; ?>)"> </div>
         pie de pagina
         <--->
-        <footer class="page-footer fixed blue lighten-2  ">
+        <!--footer class="page-footer fixed blue lighten-2  ">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
@@ -105,7 +105,7 @@
                     Made by <a class="orange-text text-lighten-3">Sebastian Larrieu y Agustin Koll  </a>
                 </div>
             </div>
-        </footer>
+        </footer--!>
 
 
 
@@ -116,7 +116,7 @@
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
-
+          <script src="js/borrar.js"></script>    
     </body>
 
 </html>
