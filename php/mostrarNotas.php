@@ -26,11 +26,10 @@
         $ultima = 0 ;
         $lista = filter_input(INPUT_GET, 'listaID', FILTER_SANITIZE_STRING);
 
-        $notas = $bd->getNotas($lista);
+        $notas = $bd->getNotas($lista,0);
         ?>
 
-        <ul class="collection">
-            <?php foreach ($notas as $nota) { ?>
+           <?php foreach ($notas as $nota) { ?>
                 <ul class="collection">
                     <li class="collection-item avatar" id="<?php echo $nota['Id']; ?>">
                         <i class="material-icons circle">comment</i>
@@ -54,12 +53,8 @@
                     $ultima ++;
                 }
                 ?>
-
-
-
-
-                <br> Link para compartir esta lista: </br> <?php echo "/index.php?listaID=$lista"; ?>
             </ul>   
+                <br> Link para compartir esta lista: </br> <?php echo "/index.php?listaID=$lista"; ?>
     </div>
 </div>
 
