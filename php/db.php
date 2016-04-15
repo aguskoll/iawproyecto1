@@ -37,19 +37,14 @@ class Model {
 
     #Agrega una nueva nota
     public function addNota($nota, $link, $fecha, $orden, $url) {
-        if($link != null){
-            $query = "INSERT INTO todo (nota, link, fecha, orden, hecha, url) VALUES('$nota', '$link', '$fecha', $orden, 0, '$url')";
-        }else{
-            $query = "INSERT INTO todo (nota, fecha, orden, hecha, url) VALUES('$nota', '$fecha', $orden, 0, '$url')";
-        }
-        
+        $query = "INSERT INTO todo (nota, link, fecha, orden, hecha, url) VALUES('$nota', '$link', '$fecha', $orden, 0, '$url')";
         $this->db->exec($query);
     }
 
-        #Marcar nota como hecha
-    public function marcarHecha($listaID) {
-            $query = "UPDATE todo SET hecha = 1 WHERE listaID = '$listaID'";
-        $this->db->exec($query);
+    #Marcar nota como hecha
+    public function marcarHecha($notaID) {
+        $query = "UPDATE todo SET hecha = 1 WHERE Id = '$notaID'";
+        return $this->db->exec($query);
     }
     
     #Agrega un nuevo identificador de lista
@@ -68,15 +63,31 @@ class Model {
     public function getNotas($listaID, $hechas) {
         return $this->db->query("SELECT Id, nota, link, fecha, orden FROM todo WHERE url = '$listaID' AND hecha = $hechas ORDER BY orden ASC")->fetchAll();
     }
-        
+    
+    #Cuenta las notas presentes en una lista
     public function contar($listaID){
         $tmp = $this->db->query("SELECT Id FROM todo WHERE url = '$listaID' AND hecha = 0 ")->fetchAll();
         return count($tmp);
         
     }
+    
+    #Borra la nota identificada
     public function deleteNota($notaID) {
         return $this->db->exec("DELETE FROM todo WHERE Id='$notaID'");
     }
+    
+    #Borra la nota identificada
+    public function getListaID($notaID) {
+        $val= $this->db->query("SELECT url FROM todo WHERE Id='$notaID'")->fetch();
+        return $val['url'];
+    }
+    
+    #Actualizar los valores de una nota
+    public function saveNota($nota, $link, $fecha, $notaID) {
+            $query = "UPDATE todo SET nota='$nota', link='$link', fecha='$fecha' WHERE Id = '$notaID'";
+            $this->db->exec($query);
+    }
+    
 
 }
 

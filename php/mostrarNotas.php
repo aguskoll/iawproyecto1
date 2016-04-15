@@ -1,16 +1,4 @@
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-<title> Tareas por hacer</title>
-
-<!-- CSS   -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-
-
-<div class="container"  >
+<div class="container">
 
     <div class="row">
 
@@ -28,33 +16,38 @@
 
         $notas = $bd->getNotas($lista,0);
         ?>
+            <ul class="collection">
 
-           <?php foreach ($notas as $nota) { ?>
-                <ul class="collection">
+                <?php foreach ($notas as $nota) { ?>
                     <li class="collection-item avatar" id="<?php echo $nota['Id']; ?>">
                         <i class="material-icons circle">comment</i>
                         <span class="title">Tarea: <?php echo $nota['nota'] ?> </span>
-                        <p><?php echo 'Fecha de finalizacion: ' . $nota['fecha'] . ' Prioridad: ' . $ultima ?></p>
-                        <p><?php echo 'Link: ' . $nota['link'] ?></p>
+                        <p>
+                            <?php echo 'Fecha de finalizacion: ' . $nota['fecha'] . ' Prioridad: ' . $ultima ?>
+                        </p>
+                        <p>
+                            <?php echo 'Link: ' . $nota['link'] ?>
+                        </p>
                         <div class="secondary-content">
-                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')"  class="waves-effect blue lighten-2 btn-floating">
+                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')" class="waves-effect blue lighten-2 btn-floating">
                                 <i class="material-icons">delete</i>
                             </a>
-                            <a onclick=""  class="waves-effect  waves-circle blue lighten-2  btn-floating">
-                                <i class="material-icons" >mode_edit </i>
+                            <a onclick="cargarEditarNota('<?php echo $nota['Id']; ?>','<?php echo $nota['nota'] ?>','<?php echo $nota['link'] ?>','<?php echo $nota['fecha'] ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                                <i class="material-icons">mode_edit </i>
                             </a>
-                            <!--a onclick=""  class="waves-effect waves-light btn">
-                                <i class="material-icons" >mode_edit </i>
-                                </a--!>
-                            <!--i class="material-icons">grade</i!-->
+
+                            <a onclick="marcarHecha('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" >
+                                <i class="material-icons">done </i>
+                            </a>
                         </div>
                     </li>
                     <?php
                     $ultima ++;
                 }
                 ?>
-            </ul>   
-                <br> Link para compartir esta lista: </br> <?php echo "/index.php?listaID=$lista"; ?>
+
+            </ul>
+            <br> Link para compartir esta lista: </br>
+            <?php echo "/index.php?listaID=$lista"; ?>
     </div>
 </div>
-

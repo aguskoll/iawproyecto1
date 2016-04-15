@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
 });
@@ -6,27 +5,27 @@ $(document).ready(function(){
 var notaID;
 
 
-function borrarNota(url) {
+function marcarHecha(url) {
    notaID=url;
     $.ajax({
-        url: 'php/borrarNota.php',
+        url: 'php/marcarHecha.php',
         data: {
-            notaID: url
+            notaID: url,
         },
         type: 'get',
         context: document.body,
         success: function (data) {
-            actualizarNotas(data);
+            actualizarHechas(data);
         }
     });
 }
 
 
-function actualizarNotas(responseXML) {
-    if ($("eliminado", responseXML).text() === "1") {
+function actualizarHechas(responseXML) {
+    if ($("check", responseXML).text() === "1") {
         var elem = document.getElementById(($("notaID", responseXML).text()));
         elem.parentNode.removeChild(elem);
     } else {
-        window.alert("Error: no se pudo eliminar a " + notaID);
+        window.alert("Error: no se pudo marcar" + notaID);
     }
 }

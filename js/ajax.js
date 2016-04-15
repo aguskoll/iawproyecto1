@@ -1,5 +1,3 @@
-
-
 var peticionHTTP = new XMLHttpRequest();
 
 
@@ -28,6 +26,7 @@ function cargarTareas(lista){
             var url="php/mostrarNotas.php?listaID="+lista;
             realizarPeticion(url,"GET",procesarRequest);
 }
+
 function crearTarea(lista){
 	
 	
@@ -35,9 +34,8 @@ function crearTarea(lista){
         var url="php/formularioAgregar.php?listaID="+lista;
         realizarPeticion(url,"GET",procesarRequest);
 }
- 
- // window.document.getElementById("cuerpo_principal").innerHTML=cargarTareas();
-  
-  
-  //funcionn que use para probar lo del load, reemplzar las llamadas 
-  //de cargarTareas()
+
+function cargarEditarNota(notaID,nota,link,fecha) {
+    var url="php/formularioEditar.php?notaID="+notaID+"&nota="+nota+"&link="+link+"&fecha="+fecha;
+    realizarPeticion(url,"GET",procesarRequest);
+}

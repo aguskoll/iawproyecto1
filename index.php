@@ -84,12 +84,7 @@
 
 
 
-        <!--!>
-        onload="cargarTareas('<?php echo $url; ?>')"  <script type="javascript" src="js/ajax.js" >
-                    cargarTareas('<?php echo $url; ?>');    
-             </script>
-         
-        <div id="cuerpo_principal" onload="cargarTareas(<?php echo $url; ?>)"> </div>
+        <!--!>         
         pie de pagina
         <--->
         <!--footer class="page-footer fixed blue lighten-2  ">
@@ -116,7 +111,8 @@
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
-          <script src="js/borrar.js"></script>    
+        <script src="js/borrar.js"></script>
+        <script src="js/marcarHecha.js"></script>    
     </body>
 
 </html>
