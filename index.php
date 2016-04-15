@@ -106,13 +106,12 @@
 
 
         <!--  Scripts-->
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/jquery-2.2.3.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
-        <script src="js/borrar.js"></script>
-        <script src="js/marcarHecha.js"></script>    
+        <script src="js/funciones.js"></script>    
     </body>
 
 </html>
