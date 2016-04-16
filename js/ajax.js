@@ -38,3 +38,8 @@ function cargarTareasHechas(lista){
     var url="php/mostrarHechas.php?listaID="+lista;
     realizarPeticion(url,"GET",procesarRequest);
 }
+
+function cargarTareasHoy(lista){
+    var url="php/mostrarHoy.php?listaID="+lista;
+    realizarPeticion(url,"GET",procesarRequest);
+}

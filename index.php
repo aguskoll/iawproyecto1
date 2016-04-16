@@ -23,7 +23,7 @@
 
 
         <ul id="slide-out" class="side-nav" onclick="boton_menu()">
-            <li><a onclick="">Tareas de hoy</a></li>
+            <li><a onclick="cargarTareasHoy('<?php echo $url; ?>')">Tareas de hoy</a></li>
             <li><a onclick="cargarTareasHechas('<?php echo $url; ?>')">Tareas hechas</a></li>
 
         </ul>

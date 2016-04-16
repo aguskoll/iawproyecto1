@@ -64,6 +64,11 @@ class Model {
         return $this->db->query("SELECT Id, nota, link, fecha, orden FROM todo WHERE url = '$listaID' AND hecha = $hechas ORDER BY orden ASC")->fetchAll();
     }
     
+    #Retorna las notas correspondients a una fecha
+    public function getNotasFecha($listaID, $date) {
+        return $this->db->query("SELECT Id, nota, link, fecha, orden FROM todo WHERE url = '$listaID' AND fecha = '$date'")->fetchAll();
+    }
+    
     #Cuenta las notas presentes en una lista
     public function contar($listaID){
         $tmp = $this->db->query("SELECT Id FROM todo WHERE url = '$listaID' AND hecha = 0 ")->fetchAll();
