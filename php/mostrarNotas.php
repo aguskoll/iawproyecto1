@@ -17,7 +17,7 @@
                     $nota=$notas[$i];
                     ?>
                     <li class="collection-item avatar" id="<?php echo $nota['Id']; ?>">
-                        <i class="material-icons circle">comment</i>
+                        <i class="material-icons circle">description</i>
                         <span class="title">Tarea: <?php echo $nota['nota'] ?> </span>
                         <p>
                             <?php echo 'Fecha de finalizacion: '.$nota['fecha'];  ?>
@@ -53,7 +53,9 @@
 
 
             </ul>
-            <br> Link para compartir esta lista: </br>
-            <?php echo "/index.php?listaID=$lista"; ?>
+
+            <!--<a onclick="compartir('<?php echo "/index.php?listaID=$lista"; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" >
+                <i class="material-icons">open_in_new</i>
+            </a>-->
     </div>
 </div>

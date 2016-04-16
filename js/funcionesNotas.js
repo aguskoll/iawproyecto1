@@ -1,9 +1,8 @@
-$(document).ready(function(){
-    $('.modal-trigger').leanModal();
-});
-
 var notaID;
 
+function compartir(url){
+    
+}
 
 function marcarHecha(url) {
    notaID=url;
@@ -30,6 +29,7 @@ function actualizar(responseXML) {
         window.alert("Error: no se pudo marcar" + notaID);
     }
 }
+
 
 function reestablecer(url) {
    notaID=url;
@@ -81,3 +81,8 @@ function actualizarNotas(responseXML) {
         window.alert("Error: no se pudo eliminar a " + notaID);
     }
 }
+
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });

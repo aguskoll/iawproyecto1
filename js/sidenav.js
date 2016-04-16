@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
  $(".button-collapse").sideNav();
  
   $('.button-collapse').sideNav({
@@ -11,10 +12,11 @@
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
   );
+*/
     // Show sideNav
 //  $('.button-collapse').sideNav('show');
   // Hide sideNav
-  $('.button-collapse').sideNav('hide');
+  //$('.button-collapse').sideNav('hide');
 
 //$("#boton_menu").click(function(){
   //   $('.button-collapse').sideNav('show');

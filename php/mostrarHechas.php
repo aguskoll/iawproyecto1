@@ -12,7 +12,7 @@
                     $nota=$notas[$i];
                     ?>
                     <li class="collection-item avatar " id="<?php echo $nota['Id']; ?> ">
-                        <i class="material-icons circle">comment</i>
+                        <i class="material-icons circle">description</i>
                         <span class="title ">Tarea: <?php echo $nota['nota'] ?> </span>
                         <p>
                             <?php echo 'Fecha de finalizacion: '.$nota['fecha'];  ?>

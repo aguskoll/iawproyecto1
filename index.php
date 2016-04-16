@@ -25,6 +25,7 @@
         <ul id="slide-out" class="side-nav" onclick="boton_menu()">
             <li><a onclick="">Tareas de hoy</a></li>
             <li><a onclick="cargarTareasHechas('<?php echo $url; ?>')">Tareas hechas</a></li>
+
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse">
             <i class="mdi-navigation-menu"></i>
@@ -63,11 +64,6 @@
                         <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
 
                     </ul>
-<!--                    <ul>
-                        <li>
-                            futura barra  !
-                        </li>
-                    </ul>-->
                 </div>
             </nav>
         </div>
@@ -76,20 +72,26 @@
             <div id="cuerpo_principal" class="cuerpo">
 
             </div>
+
         </main>
 
 
         <footer class="page-footer fixed blue lighten-2  ">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text"></h5>
-                    </div>
+            <!-- Modal Trigger -->
+            <a class="btn-floating modal-trigger waves-effect right waves-circle blue lighten-2  btn-floating" data-target="modal1"><i class="medium material-icons">open_in_new</i></a>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Compartir esta lista</h4>
+                    <p>/index.php?listaID=<?php echo $url; ?></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    Made by <a class="orange-text text-lighten-3">Sebastian Larrieu y Agustin Koll  </a>
+                    Made by <a class="white-text text-lighten-3">Sebastian Larrieu y Agustin Koll  </a>
                 </div>
             </div>
         </footer>
@@ -99,8 +101,10 @@
         <script src="js/init.js"></script>
         <script src="js/sidenav.js"></script>
         <script src="js/ajax.js"></script>
-        <script src="js/funcionesNotas.js"></script>    
+        <script src="js/funcionesNotas.js"></script>
         <script src="js/sorteable.js"></script>
+        <script type="text/javascript"></script>
+
     </body>
 
 
