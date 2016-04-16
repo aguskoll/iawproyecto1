@@ -2,20 +2,9 @@
 
     <div class="row" id="sortable">
 
-        <?php
-
-        function redirect($url) {
-            header("Location: $url");
-            die();
-        }
-
-        include_once('db.php');
-        $bd = new Model('mostrar');
-        $lista = filter_input(INPUT_GET, 'listaID', FILTER_SANITIZE_STRING);
-        $notas = $bd->getNotas($lista,1);
-      
-        $maximo=count($notas);
-        ?>
+        <?php 
+        $hechas=1;
+        include_once('cargarNotas.php');?>
             <ul  class="collection" >
 
                 <?php for ($i=0;$i<$maximo;$i++ ) { 
