@@ -20,22 +20,21 @@ function procesarRequest () {
     }
 
 function cargarTareas(lista){
-	
-	
-           
-            var url="php/mostrarNotas.php?listaID="+lista;
-            realizarPeticion(url,"GET",procesarRequest);
+    var url="php/mostrarNotas.php?listaID="+lista;
+    realizarPeticion(url,"GET",procesarRequest);
 }
 
 function crearTarea(lista){
-	
-	
-	//realizarPeticion("html/agregar_tarea.html","GET",procesarRequest);
-        var url="php/formularioAgregar.php?listaID="+lista;
-        realizarPeticion(url,"GET",procesarRequest);
+    var url="php/formularioAgregar.php?listaID="+lista;
+    realizarPeticion(url,"GET",procesarRequest);
 }
 
 function cargarEditarNota(notaID,nota,link,fecha) {
     var url="php/formularioEditar.php?notaID="+notaID+"&nota="+nota+"&link="+link+"&fecha="+fecha;
+    realizarPeticion(url,"GET",procesarRequest);
+}
+
+function cargarTareasHechas(lista){
+    var url="php/mostrarHechas.php?listaID="+lista;
     realizarPeticion(url,"GET",procesarRequest);
 }

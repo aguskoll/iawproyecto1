@@ -11,21 +11,46 @@ function marcarHecha(url) {
         url: 'php/notas.php',
         data: {
             notaID: url,
-            funcion: "marcarHecha"
+            funcion: "marcarHecha",
+            accion: "marcar"
         },
         type: 'get',
         context: document.body,
         success: function (data) {
-            actualizarHechas(data);
+            actualizar(data);
         }
     });
 }
 
 
+function actualizar(responseXML) {
+    if ($("check", responseXML).text() === "1") {
+       cargarTareas($("lista", responseXML).text());
+    } else {
+        window.alert("Error: no se pudo marcar" + notaID);
+    }
+}
+
+function reestablecer(url) {
+   notaID=url;
+    $.ajax({
+        url: 'php/notas.php',
+        data: {
+            notaID: url,
+            funcion: "marcarHecha",
+            accion:'desmarcar' //queremos desmarcar una hecha
+        },
+        type: 'get',
+        context: document.body,
+        success: function (data) {
+         actualizarHechas(data);
+        }
+    });
+}
+
 function actualizarHechas(responseXML) {
     if ($("check", responseXML).text() === "1") {
-        var elem = document.getElementById(($("notaID", responseXML).text()));
-        elem.parentNode.removeChild(elem);
+       cargarTareasHechas($("lista", responseXML).text());
     } else {
         window.alert("Error: no se pudo marcar" + notaID);
     }

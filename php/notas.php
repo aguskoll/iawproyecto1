@@ -27,6 +27,9 @@ switch ($funcion) {
     case "guardar":
         guardarNota($bd);
         break;
+    case "sorteable":
+        sor($bd);
+        break;
     default:
         die('default');
 } 
@@ -70,18 +73,45 @@ function borrarNota($bd){
 }
 
 function marcarHecha($bd){
+    
     $notaID='';
     $resultado = 0;
     if (isset($_GET['notaID'])) {
         $notaID = $_GET['notaID'];
-        $resultado = $bd->marcarHecha($notaID);
+        
+        if($_GET['accion']==='marcar'){
+            $resultado = $bd->marcarHecha($notaID);
+        }else{
+            //desmarcar
+            $resultado = $bd->reestablecer($notaID);
+        }
+    }
+    $lista = $bd->getListaID($notaID);
+    Header ( "Content-type: text/xml" ); 	
+    echo "<resultado>";
+    echo " <notaID>".$notaID."</notaID>";
+    echo " <check>".$resultado."</check>";
+    echo " <lista>".$lista."</lista>";
+    echo "</resultado>";  
+}
+
+function sor($bd){
+    $resultado = 0;
+    $notaID = '';
+
+    if (isset($_GET['notaID'])) {
+        $notaID = $_GET['notaID'];
+        $ordenNuevo=$_GET['ordenNuevo'];
+        $ordenViejo=$_GET['ordenViejo'];
+        $notaIDanterior=$_GET['notaIDanterior'];
+        $resultado = $bd->swap($notaID,$notaIDanterior,$ordenNuevo,$ordenViejo);
     }
 
     Header ( "Content-type: text/xml" ); 	
     echo "<resultado>";
     echo " <notaID>".$notaID."</notaID>";
     echo " <check>".$resultado."</check>";
-    echo "</resultado>";  
+    echo "</resultado>";
 }
 
 function redirect($url) {

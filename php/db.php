@@ -88,6 +88,20 @@ class Model {
             $this->db->exec($query);
     }
     
+   public function swap($notaID,$notaIDanterior,$ordenNuevo,$ordenViejo){
+    $query = "UPDATE todo SET orden=$ordenViejo WHERE Id ='$notaIDanterior'";
+    $this->db->exec($query);
+        
+    $query2 = "UPDATE todo SET orden=$ordenNuevo WHERE Id = '$notaID'";
+    return  $this->db->exec($query2);
+        
+    }
+    
+   public function reestablecer($notaID){
+       $query = "UPDATE todo SET hecha = 0 WHERE Id = '$notaID'";
+        return $this->db->exec($query);
+       
+   }
 
 }
 
