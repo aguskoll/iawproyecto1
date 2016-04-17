@@ -78,7 +78,9 @@
 
         <footer class="page-footer fixed blue lighten-2  ">
             <!-- Modal Trigger -->
-            <a class="btn-floating modal-trigger waves-effect right waves-circle blue lighten-2  btn-floating" data-target="modal1"><i class="medium material-icons">open_in_new</i></a>
+            <div  class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large modal-trigger waves-effect right waves-circle blue lighten-2 darken-1" data-target="modal1"><i class="material-icons">open_in_new</i></a>
+            </div>
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
@@ -103,8 +105,6 @@
         <script src="js/ajax.js"></script>
         <script src="js/funcionesNotas.js"></script>
         <script src="js/sorteable.js"></script>
-        <script type="text/javascript"></script>
-
     </body>
 
 
