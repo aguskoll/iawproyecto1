@@ -1,5 +1,7 @@
 <div class="container">
-
+ <div class="valign-wrapper">
+      <h4 class="valign">Tareas pendientes </h4>
+    </div>
     <div class="row">
         <?php    
     $hechas=0;
@@ -26,21 +28,21 @@
                             <?php echo 'Link: ' . $nota['link'] ?>
                         </p>
                         <div class="secondary-content">
-                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')" class="waves-effect blue lighten-2 btn-floating">
+                            <a onclick="borrarNota('<?php echo $nota['Id']; ?>')" class="waves-effect blue lighten-2 btn-floating " title="borrar">
                                 <i class="material-icons">delete</i>
                             </a>
-                            <a onclick="cargarEditarNota('<?php echo $nota['Id']; ?>','<?php echo $nota['nota'] ?>','<?php echo $nota['link'] ?>','<?php echo $nota['fecha'] ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                            <a onclick="cargarEditarNota('<?php echo $nota['Id']; ?>','<?php echo $nota['nota'] ?>','<?php echo $nota['link'] ?>','<?php echo $nota['fecha'] ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="editar">
                                 <i class="material-icons">mode_edit </i>
                             </a>
 
-                            <a onclick="marcarHecha('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                            <a onclick="marcarHecha('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="hecha">
                                 <i class="material-icons">done </i>
                             </a>
 
-                            <a onclick="subirNota('<?php echo $nota['Id']; ?>','<?php echo $orden; ?>','<?php echo $anterior; ?>','<?php echo $lista; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                            <a onclick="subirNota('<?php echo $nota['Id']; ?>','<?php echo $orden; ?>','<?php echo $anterior; ?>','<?php echo $lista; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="subir tarea">
                                 <i>&uarr; </i>
                             </a>
-                            <a onclick="bajarNota('<?php echo $nota['Id']; ?>','<?php echo $orden; ?>','<?php echo $siguienteID; ?>','<?php echo $lista; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                            <a onclick="bajarNota('<?php echo $nota['Id']; ?>','<?php echo $orden; ?>','<?php echo $siguienteID; ?>','<?php echo $lista; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="bajar tarea">
                                 <i>&darr; </i>
                             </a>
                         </div>
@@ -50,12 +52,6 @@
                     $anterior=$nota['Id'];
                 }
                 ?>
-
-
             </ul>
-
-            <!--<a onclick="compartir('<?php echo "/index.php?listaID=$lista"; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" >
-                <i class="material-icons">open_in_new</i>
-            </a>-->
     </div>
 </div>

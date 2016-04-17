@@ -1,6 +1,9 @@
-<div class="container" id="sortable">
+<div class="container">
+ <div class="valign-wrapper">
+      <h4 class="valign">Tareas para hoy</h4>
+    </div>
 
-    <div class="row" id="sortable">
+    <div class="row">
 
         <?php 
         $hechas=2;
@@ -23,7 +26,7 @@
                         <div class="secondary-content">
                         
 
-                            <a onclick="marcarHecha('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating">
+                            <a onclick="marcarHecha('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="hecha">
                                 <i class="material-icons">done </i>
                             </a>
                            

@@ -86,3 +86,28 @@ $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });
+  
+  function validar_nota_nueva(){
+    	if (document.crearNota.nota.value.length===0){ 
+             window.alert("Por favor ingrese texto en la tarea "); 
+             document.crearNota.nota.focus(); 
+             
+   	}
+        else{
+            document.crearNota.submit();
+        }
+      
+  }
+  
+  function validar_nota_editada(){
+      if (document.editarNota.nota.value.length===0){ 
+             window.alert("Por favor ingrese texto en la tarea "); 
+             document.editarNota.nota.focus(); 
+             
+   	}
+        else{
+            document.editarNota.submit();
+        }
+      
+      
+  }

@@ -37,7 +37,7 @@ class Model {
 
     #Agrega una nueva nota
     public function addNota($nota, $link, $fecha, $orden, $url) {
-        if($nota != '' && $fecha!=''){
+        if($nota != ''){
             $query = "INSERT INTO todo (nota, link, fecha, orden, hecha, url) VALUES('$nota', '$link', '$fecha', $orden, 0, '$url')";
             $this->db->exec($query);
         }
@@ -91,7 +91,7 @@ class Model {
     
     #Actualizar los valores de una nota
     public function saveNota($nota, $link, $fecha, $notaID) {
-        if($nota!='' && $fecha!=''){
+        if($nota!=''){
             $query = "UPDATE todo SET nota='$nota', link='$link', fecha='$fecha' WHERE Id = '$notaID'";
             $this->db->exec($query);
         }

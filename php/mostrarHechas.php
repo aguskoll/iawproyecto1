@@ -1,6 +1,9 @@
-<div class="container" id="sortable">
+<div class="container">
+    <div class="valign-wrapper">
+      <h4 class="valign">Tareas realizadas</h4>
+    </div>
 
-    <div class="row" id="sortable">
+    <div class="row">
 
         <?php 
         $hechas=1;
@@ -20,10 +23,10 @@
                         <p>
                             <?php echo 'Link: '.$nota['link'] ?>
                         </p>
-                        <div class="secondary-content">
+                        <div class="secondary-content" >
                         
 
-                            <a onclick="reestablecer('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" >
+                            <a id="reestablecer" onclick="reestablecer('<?php echo $nota['Id']; ?>')" class="waves-effect  waves-circle blue lighten-2  btn-floating" title="reestablecer tarea">
                                 <i class="material-icons">restore </i>
                             </a>
                            
@@ -38,6 +41,9 @@
             </ul>
     </div>
 </div>
-
-    <!--?php if($siguiente===null){
-                             echo -1; }else{ echo $siguiente['Id']; }?>
+  <!-- Compiled and minified JavaScript -->
+  <script>
+   $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+  </script>

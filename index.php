@@ -9,8 +9,8 @@
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen" />
 
 
 </head>
@@ -50,8 +50,8 @@
                                 <i class="material-icons left">store</i> Lista de tareas
                             </a>
                         </li>
-                        <li <a id="logo-container " class="brand-logo center">Organiza tu estudio</a>
-                            <li/>
+                        <li> <a id="logo-container" class="brand-logo center">Organiza tu estudio</a>
+                        </li>
                     </ul>
 
                     <ul class="right hide-on-med-and-down">
@@ -61,7 +61,18 @@
                                 <i class="material-icons left">add</i> Agreagar tarea
                             </a>
                         </li>
-                        <li><a href="sass.html"><i class="material-icons left">search</i>Buscar</a></li>
+                        <li>
+                         <!--barra de busqueda!-->
+                            <!--a href="sass.html"><i class="material-icons left">search</i>Buscar</a!-->
+                         <form>
+                             <div class="input-field">
+                                 <input id="search" type="search" required>
+                                 <label for="search"><i class="material-icons">search</i></label>
+                                 <i class="material-icons">close</i>
+                             </div>
+                         </form>
+                        
+                        </li>
 
                     </ul>
                 </div>
@@ -79,7 +90,7 @@
         <footer class="page-footer fixed blue lighten-2  ">
             <!-- Modal Trigger -->
             <div  class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large modal-trigger waves-effect right waves-circle blue lighten-2 darken-1 tooltipped" data-target="modal1" data-position="left" data-delay="50" data-tooltip="Compartir"><i class="material-icons">open_in_new</i></a>
+            <a class="btn-floating btn-large modal-trigger waves-effect right waves-circle green lighten-1 darken-1 tooltipped" data-target="modal1" data-position="left" data-delay="50" data-tooltip="Compartir"><i class="material-icons">open_in_new</i></a>
             </div>
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
