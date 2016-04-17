@@ -79,7 +79,7 @@
         <footer class="page-footer fixed blue lighten-2  ">
             <!-- Modal Trigger -->
             <div  class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large modal-trigger waves-effect right waves-circle blue lighten-2 darken-1" data-target="modal1"><i class="material-icons">open_in_new</i></a>
+            <a class="btn-floating btn-large modal-trigger waves-effect right waves-circle blue lighten-2 darken-1 tooltipped" data-target="modal1" data-position="left" data-delay="50" data-tooltip="Compartir"><i class="material-icons">open_in_new</i></a>
             </div>
             <!-- Modal Structure -->
             <div id="modal1" class="modal">

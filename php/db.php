@@ -37,8 +37,10 @@ class Model {
 
     #Agrega una nueva nota
     public function addNota($nota, $link, $fecha, $orden, $url) {
-        $query = "INSERT INTO todo (nota, link, fecha, orden, hecha, url) VALUES('$nota', '$link', '$fecha', $orden, 0, '$url')";
-        $this->db->exec($query);
+        if($nota != '' && $fecha!=''){
+            $query = "INSERT INTO todo (nota, link, fecha, orden, hecha, url) VALUES('$nota', '$link', '$fecha', $orden, 0, '$url')";
+            $this->db->exec($query);
+        }
     }
 
     #Marcar nota como hecha
@@ -89,8 +91,10 @@ class Model {
     
     #Actualizar los valores de una nota
     public function saveNota($nota, $link, $fecha, $notaID) {
+        if($nota!='' && $fecha!=''){
             $query = "UPDATE todo SET nota='$nota', link='$link', fecha='$fecha' WHERE Id = '$notaID'";
             $this->db->exec($query);
+        }
     }
     
    public function swap($notaID,$notaIDanterior,$ordenNuevo,$ordenViejo){
