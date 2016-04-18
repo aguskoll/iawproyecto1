@@ -43,3 +43,8 @@ function cargarTareasHoy(lista){
     var url="php/mostrarHoy.php?listaID="+lista;
     realizarPeticion(url,"GET",procesarRequest);
 }
+
+function cargarReadme(){
+    var url="html/readme.html";
+    realizarPeticion(url,"GET",procesarRequest);
+}
