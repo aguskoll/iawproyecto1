@@ -25,7 +25,7 @@
         <ul id="slide-out" class="side-nav" onclick="boton_menu()">
             <li><a onclick="cargarTareasHoy('<?php echo $url; ?>')">Tareas de hoy</a></li>
             <li><a onclick="cargarTareasHechas('<?php echo $url; ?>')">Tareas hechas</a></li>
-
+            <li><a onclick="cargarReadme()">Readme</a></li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse">
             <i class="mdi-navigation-menu"></i>
