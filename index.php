@@ -96,7 +96,7 @@
             <div id="modal1" class="modal">
                 <div class="modal-content">
                     <h4>Compartir esta lista</h4>
-                    <p>/index.php?listaID=<?php echo $url; ?></p>
+                    <p>hosting.cs.uns.edu.ar/iawproyecto1-master/index.php?listaID=<?php echo $url; ?></p>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
